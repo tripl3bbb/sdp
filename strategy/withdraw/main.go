@@ -18,7 +18,7 @@ func main() {
 
 func processCashOut(withdraw Withdrawal) {
 	//
-	err := withdraw.Cashout()
+	err := withdraw.Withdraw()
 	if err != nil {
 		return
 	}
@@ -36,6 +36,11 @@ type ToCard struct {
 	cardNumber, cvv string
 }
 
+func (p *ToCard) Withdraw() error {
+	//TODO implement me
+	panic("implement me")
+}
+
 func NewCardCashout(cardNumber, cvv string) Withdrawal {
 	return &ToCard{
 		cardNumber: cardNumber,
@@ -51,7 +56,12 @@ func (p *ToCard) Pay() error {
 type ToCrypto struct {
 }
 
-func NewCryptoCashout() Withdrawal {
+func (p *ToCrypto) Withdraw() error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func NewCryptoCashout() *ToCrypto {
 	return &ToCrypto{}
 }
 
@@ -63,7 +73,12 @@ func (p *ToCrypto) Pay() error {
 type ToSkins struct {
 }
 
-func NewSkinsCashout() Withdrawal {
+func (p *ToSkins) Withdraw() error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func NewSkinsCashout() *ToSkins {
 	return &ToSkins{}
 }
 
