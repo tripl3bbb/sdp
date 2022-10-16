@@ -31,7 +31,7 @@ func main() {
 
 	stockMonitor.SetPrice(500)
 
-	stockMonitor.Detach(observerA)
+	stockMonitor.Unsubscribe(observerA)
 
 	stockMonitor.SetPrice(528)
 }

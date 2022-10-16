@@ -20,7 +20,7 @@ func main() {
 
 	var toLower Decorator = strings.ToLower
 	var toUpper Decorator = strings.ToUpper
-	input := "Let's decorate me!"
+	input := "Decorate"
 	inputUppercase := Decorate(input, []Decorator{toUpper}...)
 	fmt.Println(inputUppercase)
 

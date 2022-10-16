@@ -17,8 +17,8 @@ func main() {
 	processOrder(product, payment)
 }
 
-func processOrder(game string, payment Deposit) {
-	//
+func processOrder(product string, payment Deposit) {
+	//todo implement me
 	err := payment.Pay()
 	if err != nil {
 		return
@@ -45,7 +45,7 @@ func NewCardPayment(cardNumber, cvv string) Deposit {
 }
 
 func (p *ByCard) Pay() error {
-	//
+	//todo implement me
 	return nil
 }
 
@@ -57,7 +57,7 @@ func NewBitcoinPayment() Deposit {
 }
 
 func (p *ByBitcoin) Pay() error {
-	//
+	//todo implement me
 	return nil
 }
 

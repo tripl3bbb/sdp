@@ -12,7 +12,7 @@ type Monitor struct {
 	observers []Observer
 }
 
-func (s *Monitor) Attach(o Observer) (bool, error) {
+func (s *Monitor) Subscribe(o Observer) (bool, error) {
 
 	for _, observer := range s.observers {
 		if observer == o {
@@ -23,7 +23,7 @@ func (s *Monitor) Attach(o Observer) (bool, error) {
 	return true, nil
 }
 
-func (s *Monitor) Detach(o Observer) (bool, error) {
+func (s *Monitor) Unsubscribe(o Observer) (bool, error) {
 
 	for i, observer := range s.observers {
 		if observer == o {
@@ -49,8 +49,4 @@ func (s *Monitor) SetPrice(price float64) {
 func (s *Monitor) String() string {
 	convertFloatToString := strconv.FormatFloat(s.price, 'f', 2, 64)
 	return "Monitor: " + s.ticker + " $" + convertFloatToString
-}
-
-func (s *Monitor) Unsubscribe(b *SObserver) {
-
 }
